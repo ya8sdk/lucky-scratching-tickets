@@ -1,0 +1,18 @@
+
+apiVersion: apps/v1 kind: Deployment metadata:
+  name: assignment-deployment
+  labels:
+    app: argus-ticket spec:
+  selector:
+    matchLabels:
+      app: argus-ticket
+  template:
+    metadata:
+      labels:
+        app: argus-ticket
+    spec:
+      containers:
+      - name: luckyTicket
+        image: localhost:32000/assignmentImage:latest
+        ports:
+        - containerPort: 80
